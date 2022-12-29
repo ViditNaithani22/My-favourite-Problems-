@@ -1,4 +1,4 @@
-package RunningSumOf_1D_Array;
+package common_java_problems.RunningSumOf1Darray;
 
 import java.util.Arrays;
 import java.util.Scanner;
