@@ -14,7 +14,7 @@ public class weightedQuickUnion {
         sz = new int[n];
         for (int i = 0; i < n; i ++) {
             id[i] = i;
-            sz[i] = i;
+            sz[i] = 1;
         }
     }
 
@@ -48,10 +48,21 @@ public class weightedQuickUnion {
             id[i] = j;
             sz[j] += sz[i];
         }
-        else {
+        else if(sz[i] > sz[j]){
             id[j] = i;
             sz[i] += sz[j];
         }
+        else {
+            if(i>j){
+                id[j] = i;
+                sz[i] += sz[j];
+            }
+            else {
+                id[i] = j;
+                sz[j] += sz[i];
+            }
+        }
+
         count --;
     }
 
